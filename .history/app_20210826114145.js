@@ -5,18 +5,15 @@ const HandleDrag = (event) => {
 };
 
 const HandleDragStart = (event) => {
-  event.dataTransfer.setData("targetId", event.target.id);
+  console.log("drag start");
 };
 
 const handleDragOver = (event) => {
-  event.preventDefault();
   console.log("drag over");
 };
 
 const handleDrop = (event) => {
-  event.preventDefault();
-  const targetId = event.dataTransfer.getData("targetId");
-  event.target.appendChild(document.getElementById(targetId));
+  console.log("drop");
 };
 
 draggedTarget.addEventListener("drag", HandleDrag);
