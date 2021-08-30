@@ -1,6 +1,6 @@
 const realInput = document.querySelector(".img-input");
 const imgTag = document.querySelector(".img");
-
+const img = document.querySelector("#root");
 var resizeImage = function (settings) {
   var file = settings.file;
   var maxSize = settings.maxSize;
@@ -64,19 +64,19 @@ const handleImgInput = (e) => {
   resizeImage(config)
     .then((resizedImage) => {
       const url = window.URL.createObjectURL(resizedImage);
-      const img = document.createElement("img");
-      img.setAttribute("src", url);
-      img.className = "profile-img";
-      img.style.display = "block";
-      imgTag.appendChild(img);
-    })
-    .then(() => {
-      const img = document.querySelector(".profile-img");
-      img.onload = () => {
-        const widthDiff = (img.clientWidth - imgTag.offsetWidth) / 2;
-        const heightDiff = (img.clientHeight - imgTag.offsetHeight) / 2;
-        img.style.transform = `translate( -${widthDiff}px , -${heightDiff}px)`;
-      };
+      console.log(
+        imgTag.style.width,
+        img.style.width,
+        imgTag.style.height,
+        img.style.height
+      );
+      const widthDiff = imgTag.width - img.width;
+      const heightDiff = imgTag.height - img.height;
+      console.log(widthDiff, heightDiff);
+      img.src = url;
+      img.style.transform = `translate(${(imgTag.width - img.width) / 2}px , ${
+        (imgTag.height - img.height) / 2
+      }px)`;
     })
     .catch((err) => {
       console.log(err);

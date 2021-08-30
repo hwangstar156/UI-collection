@@ -1,0 +1,17 @@
+.drag {
+  width: 100px;
+  height: 100px;
+  color: white;
+  background-color: black;
+}
+
+.target {
+  width: 200px;
+  height: 200px;
+  color: white;
+  background-color: blue;
+}
+
+#root > img {
+  border-radius: 50%;
+}

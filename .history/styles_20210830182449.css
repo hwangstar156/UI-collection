@@ -1,0 +1,24 @@
+.drag {
+  width: 100px;
+  height: 100px;
+  color: white;
+  background-color: black;
+}
+
+.target {
+  width: 200px;
+  height: 200px;
+  color: white;
+  background-color: blue;
+}
+
+.img {
+  width: 289px;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+#root {
+  transform: translate(-22%);
+}

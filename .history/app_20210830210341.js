@@ -39,9 +39,6 @@ var resizeImage = function (settings) {
     return dataURItoBlob(dataUrl);
   };
   return new Promise(function (ok, no) {
-    if (!file) {
-      return;
-    }
     if (!file.type.match(/image.*/)) {
       no(new Error("Not an image"));
       return;
@@ -59,24 +56,12 @@ var resizeImage = function (settings) {
 const handleImgInput = (e) => {
   const config = {
     file: e.target.files[0],
-    maxSize: 350,
+    maxSize: 540,
   };
   resizeImage(config)
     .then((resizedImage) => {
-      const url = window.URL.createObjectURL(resizedImage);
-      const img = document.createElement("img");
-      img.setAttribute("src", url);
-      img.className = "profile-img";
-      img.style.display = "block";
-      imgTag.appendChild(img);
-    })
-    .then(() => {
-      const img = document.querySelector(".profile-img");
-      img.onload = () => {
-        const widthDiff = (img.clientWidth - imgTag.offsetWidth) / 2;
-        const heightDiff = (img.clientHeight - imgTag.offsetHeight) / 2;
-        img.style.transform = `translate( -${widthDiff}px , -${heightDiff}px)`;
-      };
+      const url = window.URL.createObjectURL(resizeImage);
+      console.log(url);
     })
     .catch((err) => {
       console.log(err);

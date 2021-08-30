@@ -1,0 +1,10 @@
+.img {
+  width: 289px;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+#root {
+  transform: translate(-23%);
+}

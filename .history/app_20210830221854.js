@@ -69,6 +69,9 @@ const handleImgInput = (e) => {
       img.className = "profile-img";
       img.style.display = "block";
       imgTag.appendChild(img);
+      //   img.style.transform = `translate(${(imgTag.width - img.width) / 2}px , ${
+      //     (imgTag.height - img.height) / 2
+      //   }px)`;
     })
     .then(() => {
       const img = document.querySelector(".profile-img");

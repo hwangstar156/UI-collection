@@ -8,6 +8,6 @@
   top: 300px;
 }
 
-.profile-img {
-  display: block;
+#root {
+  transform: translate(-28%, -9%);
 }

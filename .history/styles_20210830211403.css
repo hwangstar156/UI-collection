@@ -4,10 +4,10 @@
   overflow: hidden;
   border-radius: 50%;
   position: absolute;
-  left: 300px;
-  top: 300px;
+  left: 30px;
+  top: 30px;
 }
 
-.profile-img {
-  display: block;
+#root {
+  transform: translate(-28%, -9%);
 }

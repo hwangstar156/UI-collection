@@ -67,16 +67,17 @@ const handleImgInput = (e) => {
       const img = document.createElement("img");
       img.setAttribute("src", url);
       img.className = "profile-img";
-      img.style.display = "block";
       imgTag.appendChild(img);
+      //   img.style.transform = `translate(${(imgTag.width - img.width) / 2}px , ${
+      //     (imgTag.height - img.height) / 2
+      //   }px)`;
     })
     .then(() => {
       const img = document.querySelector(".profile-img");
-      img.onload = () => {
-        const widthDiff = (img.clientWidth - imgTag.offsetWidth) / 2;
-        const heightDiff = (img.clientHeight - imgTag.offsetHeight) / 2;
-        img.style.transform = `translate( -${widthDiff}px , -${heightDiff}px)`;
-      };
+      return img;
+    })
+    .then((img) => {
+      console.dir(img.clientHeight);
     })
     .catch((err) => {
       console.log(err);
