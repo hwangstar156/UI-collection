@@ -1,0 +1,12 @@
+.drag-box {
+    width : 200px;
+    height : 200px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+.drop-box {
+    width : 1000px;
+    height : 1000px;
+    background-color : yellow;
+}

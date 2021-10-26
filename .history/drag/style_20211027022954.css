@@ -1,0 +1,12 @@
+.drag-box {
+    width : 200px;
+    height : 200px;
+    position: absolute;
+    -webkit-user-drag: none;
+}
+
+.drop-box {
+    width : 500px;
+    height : 500px;
+    background-color : yellow;
+}
